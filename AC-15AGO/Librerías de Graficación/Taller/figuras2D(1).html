@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras 2D</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        input[type="number"], input[type="color"], select {
+            margin: 5px 0;
+        }
+        #canvas-container {
+            position: relative;
+            border: 1px solid #000;
+            width: 800px;
+            height: 600px;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Figuras 2D</h1>
+    <div class="form-container">
+        <label for="shape">Seleccionar figura:</label>
+        <select id="shape">
+            <option value="circle">Círculo</option>
+            <option value="star">Estrella</option>
+            <option value="square">Cuadro</option>
+            <option value="triangle">Triángulo</option>
+        </select>
+
+        <label for="x">Coordenada X:</label>
+        <input type="number" id="x" placeholder="X" />
+
+        <label for="y">Coordenada Y:</label>
+        <input type="number" id="y" placeholder="Y" />
+
+        <label for="size">Tamaño (radio o longitud):</label>
+        <input type="number" id="size" placeholder="Tamaño" />
+
+        <label for="color">Color de relleno:</label>
+        <input type="color" id="color" value="#ff0000" />
+
+        <label for="borderColor">Color del borde:</label>
+        <input type="color" id="borderColor" value="#000000" />
+
+        <button id="drawButton">Dibujar</button>
+    </div>
+
+    <div id="canvas-container">
+        <canvas id="canvas" width="800" height="600"></canvas>
+    </div>
+
+    <script src="Figuras2D.js"></script>
+</body>
+</html>
