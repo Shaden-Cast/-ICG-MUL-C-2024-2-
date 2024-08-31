@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polígono Regular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #form-container {
+            margin-bottom: 20px;
+        }
+        input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h1>Página que dibuja polígonos ;]</h1>
+        <label for="n">Número de lados del polígono:</label>
+        <input type="number" id="n" min="3" required>
+        <br>
+        <label>¿lado o apotema?:</label>
+        <input type="radio" id="opcion-lado" name="opcion" value="lado" checked>
+        <label for="opcion-lado">Lado</label>
+        <input type="radio" id="opcion-apotema" name="opcion" value="apotema">
+        <label for="opcion-apotema">Apotema</label>
+        <br>
+        <label for="lado">Longitud de los lados del polígono:</label>
+        <input type="number" id="lado" step="0.01">
+        <br>
+        <label for="apotema">Longitud del apotema del polígono:</label>
+        <input type="number" id="apotema" step="0.01" disabled>
+        <br>
+        <label for="centroX">Coordenada centro X:</label>
+        <input type="number" id="centroX" value="250">
+        <br>
+        <label for="centroY">Coordenada centro Y:</label>
+        <input type="number" id="centroY" value="250">
+        <br>
+        <button onclick="dibujarPoligono()">Trazar</button>
+    </div>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid black;"></canvas>
+
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="parcial1-ok.js"></script>
+</body>
+</html>
