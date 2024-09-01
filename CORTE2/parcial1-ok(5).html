@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polígono Regular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #form-container {
+            margin-bottom: 20px;
+        }
+        input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h1>Página que dibuja polígonos ;]</h1>
+
+        <label for="n">Número de lados del polígono:</label>
+        <input type="number" id="n" min="3" required>
+        <br>
+
+        <label>¿Lado o apotema?:</label>
+        <input type="radio" id="opcion-lado" name="opcion" value="lado" checked>
+        <label for="opcion-lado">Lado</label>
+        <input type="radio" id="opcion-apotema" name="opcion" value="apotema">
+        <label for="opcion-apotema">Apotema</label>
+        <br>
+
+        <label for="lado">Longitud de los lados del polígono:</label>
+        <input type="number" id="lado" step="0.01">
+        <br>
+
+        <label for="apotema">Longitud del apotema del polígono:</label>
+        <input type="number" id="apotema" step="0.01" disabled>
+        <br>
+
+        <label>¿Coordenadas cartesianas o polares?:</label>
+        <input type="radio" id="opcion-cartesiana" name="tipoCoordenada" value="cartesiana" checked>
+        <label for="opcion-cartesiana">Cartesianas</label>
+        <input type="radio" id="opcion-polar" name="tipoCoordenada" value="polar">
+        <label for="opcion-polar">Polares</label>
+        <br>
+
+        <div id="cartesiana-inputs">
+            <label for="centroX">Coordenada centro X:</label>
+            <input type="number" id="centroX" value="250">
+            <br>
+
+            <label for="centroY">Coordenada centro Y:</label>
+            <input type="number" id="centroY" value="250">
+            <br>
+        </div>
+
+        <div id="polar-inputs">
+            <label for="radio">Radio:</label>
+            <input type="number" id="radio" step="0.01" disabled>
+            <br>
+
+            <label for="angulo">Ángulo:</label>
+            <input type="number" id="angulo" step="0.01" disabled>
+            <br>
+        </div>
+
+        <button onclick="dibujarPoligono()">Trazar</button>
+    </div>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid black;"></canvas>
+
+    <script src="parcial1-ok(5).js"></script>
+</body>
+</html>
