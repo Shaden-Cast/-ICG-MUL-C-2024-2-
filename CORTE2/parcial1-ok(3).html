@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polígono Regular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #form-container {
+            margin-bottom: 20px;
+        }
+        input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="form-container">
+        <h1>Página que dibuja polígonos ;]</h1>
+        <label for="n">Número de lados del polígono:</label>
+        <input type="number" id="n" min="3" required>
+        <br>
+
+        <!-- Selección de opción entre Lado y Apotema -->
+        <label>¿Lado o Apotema?:</label>
+        <input type="radio" id="opcion-lado" name="opcion" value="lado" checked>
+        <label for="opcion-lado">Lado</label>
+        <input type="radio" id="opcion-apotema" name="opcion" value="apotema">
+        <label for="opcion-apotema">Apotema</label>
+        <br>
+        
+        <!-- Entradas para Lado y Apotema -->
+        <label for="lado">Longitud de los lados del polígono:</label>
+        <input type="number" id="lado" step="0.01">
+        <br>
+        <label for="apotema">Longitud del apotema del polígono:</label>
+        <input type="number" id="apotema" step="0.01" disabled>
+        <br>
+        
+        <!-- Selección del tipo de coordenadas -->
+        <label>¿Tipo de coordenadas?:</label>
+        <input type="radio" id="opcion-cartesiana" name="tipo-coordenada" value="cartesiana" checked>
+        <label for="opcion-cartesiana">Cartesiana</label>
+        <input type="radio" id="opcion-polar" name="tipo-coordenada" value="polar">
+        <label for="opcion-polar">Polar</label>
+        <br>
+
+        <!-- Entradas para coordenadas cartesianas -->
+        <div id="cartesiana-inputs">
+            <label for="centroX">Coordenada centro X:</label>
+            <input type="number" id="centroX" value="250">
+            <br>
+            <label for="centroY">Coordenada centro Y:</label>
+            <input type="number" id="centroY" value="250">
+            <br>
+        </div>
+
+        <!-- Entradas para coordenadas polares -->
+        <div id="polar-inputs" style="display:none;">
+            <label for="radio">Radio:</label>
+            <input type="number" id="radio" step="0.01">
+            <br>
+            <label for="angulo">Ángulo (radianes):</label>
+            <input type="number" id="angulo" step="0.01">
+            <br>
+        </div>
+
+        <button onclick="dibujarPoligono()">Trazar</button>
+    </div>
+    <canvas id="canvas" width="500" height="500" style="border:1px solid black;"></canvas>
+
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="parcial1-ok(3).js"></script>
+</body>
+</html>
